@@ -1,4 +1,4 @@
-- here: $(here)
-- name: $(name)
-- path: $(path)
+- here: ${here}
+- name: ${name}
+- path: ${path}
 - test: OK

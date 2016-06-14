@@ -30,7 +30,9 @@ class SyamlPreProcess(object):
         kwds['here'] = os.path.dirname(abs_file_path)
         kwds['name'] = os.path.basename(abs_file_path)
         kwds['path'] = abs_file_path
-        fp = io.BytesIO(tmpl.render(**kwds))
+
+        buf = tmpl.render(**kwds)
+        fp = io.BytesIO(buf.encode())
         fp.seek(0)
         return fp
 

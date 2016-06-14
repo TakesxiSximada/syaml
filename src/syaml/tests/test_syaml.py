@@ -2,6 +2,13 @@ import os
 from unittest import TestCase
 
 
+def get_path(path):
+    return os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        path,
+        )
+
+
 class SyamlDefaultReadTest(TestCase):
     def _get_target(self):
         from ..syaml import read as func
@@ -12,8 +19,7 @@ class SyamlDefaultReadTest(TestCase):
         return target(*args, **kwds)
 
     def test_fileobj(self):
-        yaml_path = './syaml_test.yaml'
-
+        yaml_path = get_path('./syaml_test.yaml')
         with open(yaml_path) as fp:
             obj = self._call_fut(fp)
 
@@ -27,7 +33,7 @@ class SyamlDefaultReadTest(TestCase):
         self.assertEqual(obj[3]['test'], 'OK')
 
     def test_filepath(self):
-        yaml_path = './syaml_test.yaml'
+        yaml_path = get_path('./syaml_test.yaml')
         obj = self._call_fut(yaml_path)
 
         path = os.path.abspath(yaml_path)
