@@ -1,0 +1,5 @@
+deployment:
+  staging:
+    branch: release-0\.1\.dev0
+    commands:
+      - python setup.py sdist upload -r https://testpypi.python.org/pypi
