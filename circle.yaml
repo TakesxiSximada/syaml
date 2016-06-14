@@ -1,5 +1,5 @@
 deployment:
   release:
-    branch: develop
+    branch: /release-*/
     commands:
       - python setup.py sdist upload -r https://testpypi.python.org/pypi

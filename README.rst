@@ -1,5 +1,6 @@
 syaml - YAML parser that environment variable is expanded
 =========================================================
+release
 
 - PyPI: https://pypi.python.org/pypi/syaml
 - Github: https://github.com/TakesxiSximada/syaml
