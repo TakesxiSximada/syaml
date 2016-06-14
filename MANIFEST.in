@@ -1,4 +1,1 @@
-recursive-include src/*
-include *.rst
-include *.py
-include *.yaml
+recursive-include src/* *.py *.yaml
