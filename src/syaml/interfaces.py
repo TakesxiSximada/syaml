@@ -36,7 +36,7 @@ class IPostProcess(Interface):
 
 class IReader(Interface):
     pre = Attribute('pre process')
-    parser = Attribute('parser process')
+    parse = Attribute('parser process')
     post = Attribute('post process')
 
     def __call__(obj):

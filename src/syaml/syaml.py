@@ -6,6 +6,7 @@ import six
 import yaml
 from mako.template import Template
 from zope.interface import implementer
+from zope.component import IFactory
 
 from .interfaces import (
     IParser,
@@ -13,6 +14,9 @@ from .interfaces import (
     IPreProcess,
     IReader,
     )
+
+
+NAME = 'syaml'
 
 
 @implementer(IPreProcess)
@@ -63,8 +67,19 @@ class SyamlReader(object):
             fileobj,
             )
 
-read = SyamlReader(
-    pre=SyamlPreProcess(),
-    parse=SyamlParser(),
-    post=SyamlPostProcess(),
-    )
+
+@implementer(IFactory)
+class SyamlReaderFactory(object):
+    def __call__(self):
+        return SyamlReader(
+            pre=SyamlPreProcess(),
+            parse=SyamlParser(),
+            post=SyamlPostProcess(),
+            )
+
+
+def includeme(config):
+    reg = config.registry
+    create_reader = SyamlReaderFactory()
+    reader = create_reader()
+    reg.registerUtility(reader, IReader, NAME)

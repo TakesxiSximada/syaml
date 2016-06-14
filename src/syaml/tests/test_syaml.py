@@ -10,13 +10,11 @@ def get_path(path):
 
 
 class SyamlDefaultReadTest(TestCase):
-    def _get_target(self):
-        from ..syaml import read as func
-        return func
-
     def _call_fut(self, *args, **kwds):
-        target = self._get_target()
-        return target(*args, **kwds)
+        from .. import syaml
+        create_reader = syaml.SyamlReaderFactory()
+        reader = create_reader()
+        return reader(*args, **kwds)
 
     def test_fileobj(self):
         yaml_path = get_path('./syaml_test.yaml')
