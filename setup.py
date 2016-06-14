@@ -74,6 +74,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'PyYAML',
+        'jumon',
         'zope.interface',
     ],
     entry_points="""\
