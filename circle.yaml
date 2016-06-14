@@ -1,3 +1,5 @@
-test:
-  override:
-    - echo "OK"
+deployment:
+  release:
+    branch: develop
+    commands:
+      - python setup.py sdist upload -r https://testpypi.python.org/pypi
