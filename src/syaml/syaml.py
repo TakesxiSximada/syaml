@@ -63,6 +63,6 @@ class SyamlReader(object):
 
 read = SyamlReader(
     pre=SyamlPreProcess(),
-    parser=SyamlParser(),
+    parse=SyamlParser(),
     post=SyamlPostProcess(),
     )
