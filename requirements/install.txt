@@ -1,2 +1,2 @@
-PyYAML==1
-zope.interface==1
+PyYAML==3.11
+zope.interface==4.2.0
