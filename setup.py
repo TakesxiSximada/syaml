@@ -75,6 +75,8 @@ setup(
     install_requires=[
         'PyYAML',
         'jumon',
+        'mako',
+        'six',
         'zope.interface',
     ],
     entry_points="""\
