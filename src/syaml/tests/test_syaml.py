@@ -9,7 +9,7 @@ class SyamlDefaultReadTest(TestCase):
 
     def _call_fut(self, *args, **kwds):
         target = self._get_target()
-        return target(**args, **kwds)
+        return target(*args, **kwds)
 
     def test_fileobj(self):
         yaml_path = './syaml_test.yaml'
