@@ -1,1 +1,2 @@
-wheel
+wheel=0
+setuptools=0
