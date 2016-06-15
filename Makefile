@@ -19,7 +19,7 @@ bump:
 
 .PHONY: production
 production:
-	python setup.py sdist bdist_wheel upload -r https://pypi.python.org/pypi
+	python setup.py sdist bdist_wheel upload
 
 .PHONY: staging
 staging:
