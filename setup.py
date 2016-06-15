@@ -53,6 +53,7 @@ setup(
     description='YAML parser that environment variable is expanded',
     long_description=read('README.rst'),
     url='https://github.com/TakesxiSximada/syaml',
+    keywords='YAML',
     classifiers=[
         'Development Status :: 1 - Planning',
         'License :: OSI Approved :: Apache Software License',
