@@ -58,6 +58,30 @@ If `test@example.com` the environment variable `EMAIL` is set, the above file is
 
   - email: test@example.com
 
+Well , you have the following YAML.
+
+src/syaml/tests/syaml_test.yaml::
+
+  - here: ${here}
+  - name: ${name}
+  - path: ${path}
+  - test: OK
+
+You can analyze the YAML with the following code .::
+
+
+   >>> import syaml.syaml
+   >>> data = syaml.syaml.load('src/syaml/tests/syaml_test.yaml')
+   >>>
+   >>> import pprint
+   >>> pprint.pprint(data)
+   [{'here': '/path/to/syaml/src/syaml/tests'},
+    {'name': 'syaml_test.yaml'},
+    {'path': '/path/to/syaml/src/syaml/tests/syaml_test.yaml'},
+    {'test': 'OK'}]
+   >>>
+
+
 Other
 -----
 

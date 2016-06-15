@@ -81,6 +81,9 @@ class SyamlReaderFactory(object):
             post=SyamlPostProcess(),
             )
 
+get_reader = SyamlReaderFactory()
+load = get_reader()
+
 
 def includeme(config):
     reg = config.registry
