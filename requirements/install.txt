@@ -1,6 +1,6 @@
 PyYAML==3.11
-jumon=0
-mako=0
-six=0
-zope.component=0
+jumon==1.1.11
+Mako==1.0.4
+six==1.10.0
+zope.component==4.2.2
 zope.interface==4.2.0
