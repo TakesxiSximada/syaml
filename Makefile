@@ -25,9 +25,7 @@ production:
 
 .PHONY: staging
 staging:
-	python setup.py sdist
-	python setup.py bdist_wheel
-	python setup.py upload -r https://testpypi.python.org/pypi
+	python setup.py sdist bdist_wheel upload -r https://testpypi.python.org/pypi
 
 .PHONY: version
 version:
