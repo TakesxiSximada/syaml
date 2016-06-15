@@ -22,7 +22,7 @@ NAME = 'syaml'
 @implementer(IPreProcess)
 class SyamlPreProcess(object):
     def __call__(self, fileobj):
-        if isinstance(fileobj, six.text_type):
+        if isinstance(fileobj, six.string_types):
             filepath = fileobj
             tmpl = Template(filename=filepath)
         else:  # may be file like object
