@@ -1,0 +1,4 @@
+- here: ${here}
+- name: ${name}
+- path: ${path}
+- test: OK
