@@ -77,6 +77,7 @@ setup(
         'jumon',
         'mako',
         'six',
+        'zope.component',
         'zope.interface',
     ],
     entry_points="""\
