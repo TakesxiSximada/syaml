@@ -55,7 +55,7 @@ setup(
     url='https://github.com/TakesxiSximada/syaml',
     keywords='YAML',
     classifiers=[
-        'Development Status :: 1 - Planning',
+        'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
