@@ -1,3 +1,5 @@
+VERSION_FILE := src/syaml/__init__.py
+
 .PHONY: help
 help:
 	@echo "Subcommands:"
@@ -9,7 +11,9 @@ help:
 .PHONY: bump
 bump:
 	@if [ "$(version)" == "" ]; then echo "You must specify the version.\nex) make bump version=VERSION"; exit 1; fi
-	@sed -i -e "s/$(shell make version)/$(version)/" src/syaml/__init__.py
+	@sed -i -e "s/$(shell make version)/$(version)/" $(VERSION_FILE)
+	@git diff $(VERSION_FILE)
+	@git commit -m "bump version to $(version)" $(VERSION_FILE)
 
 .PHONY: production
 production:
