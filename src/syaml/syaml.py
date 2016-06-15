@@ -26,15 +26,19 @@ class SyamlPreProcess(object):
             filepath = fileobj
             tmpl = Template(filename=filepath)
         else:  # may be file like object
-            filepath = fileobj.name
+            filepath = getattr(fileobj, 'name', None)  # fileobj has not name if it not file object
             tmpl = Template(fileobj.read())
 
-        abs_file_path = os.path.abspath(filepath)
         kwds = dict(os.environ)
-        kwds['here'] = os.path.dirname(abs_file_path)
-        kwds['name'] = os.path.basename(abs_file_path)
-        kwds['path'] = abs_file_path
-
+        if filepath is not None:  # file like object, but not file object
+            abs_file_path = os.path.abspath(filepath)
+            kwds['here'] = os.path.dirname(abs_file_path)
+            kwds['name'] = os.path.basename(abs_file_path)
+            kwds['path'] = abs_file_path
+        else:
+            kwds['here'] = '""'
+            kwds['name'] = '""'
+            kwds['path'] = '""'
         buf = tmpl.render(**kwds)
         fp = io.BytesIO(buf.encode())
         fp.seek(0)
