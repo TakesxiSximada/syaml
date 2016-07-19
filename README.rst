@@ -58,6 +58,45 @@ If `test@example.com` the environment variable `EMAIL` is set, the above file is
 
   - email: test@example.com
 
+Use command line tool
+^^^^^^^^^^^^^^^^^^^^^^
+
+syaml render
+~~~~~~~~~~~~
+
+It render the SAYML file.
+
+example.yml::
+
+   general:
+     - ${here}
+     - ${name}
+     - ${path}
+
+Execute syaml render command::
+
+   $ syaml render example.yml
+   general:
+   - /path/to/syaml
+   - example.yml
+   - /path/to/syaml/example.yml
+
+Execute syaml render command json style::
+
+   $ syaml render example.yml --json
+   {"general": ["/path/to/syaml", "example.yml", "/path/to/syaml/example.yml"]}
+
+
+Execute syaml render command pre process only::
+
+  $ syaml render example.yml --pre
+  general:
+    - /path/to/syaml
+    - example.yml
+    - /path/to/syaml/example.yml
+
+
+
 Other
 -----
 
