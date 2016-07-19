@@ -1,0 +1,4 @@
+general:
+  - ${here}
+  - ${name}
+  - ${path}
