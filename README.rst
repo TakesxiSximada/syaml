@@ -58,6 +58,39 @@ If `test@example.com` the environment variable `EMAIL` is set, the above file is
 
   - email: test@example.com
 
+Load file and Load string
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Example file /path/to/syaml/example.yml::
+
+  general:
+    - ${here}
+    - ${name}
+    - ${path}
+
+Load file object::
+
+   >>> import syaml
+   >>> with open('example.yml', 'rb') as fp:
+   ...     syaml.load(fp)
+   ...
+   {'general': ['/path/to/syaml', 'example.yml', '/path/to/syaml/example.yml']}
+
+Load byte string object::
+
+   >>> syaml.loads(b'general:\n  - ${here}\n  - ${name}\n  - ${path}\n')
+   {'general': ['', '', '']}
+
+Load string object::
+
+   >>> syaml.loads('general:\n  - ${here}\n  - ${name}\n  - ${path}\n')
+   {'general': ['', '', '']}
+   >>>
+
+`name` and `path` and `here`  will replace to empty string If you passed a string to syaml.loads function.
+They are for a file object. A string like object don't have file path.
+
+
 Other
 -----
 
