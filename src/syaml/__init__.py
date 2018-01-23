@@ -4,7 +4,7 @@ import six
 
 from . import syaml
 
-__version__ = '1.2.dev0'
+__version__ = '1.2'
 
 
 def load(fp):
