@@ -1,2 +1,2 @@
 wheel==0.33.4
-setuptools==41.1.0
+setuptools==41.1.0.post1
