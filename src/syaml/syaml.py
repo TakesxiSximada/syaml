@@ -48,7 +48,7 @@ class SyamlPreProcess(object):
 @implementer(IParser)
 class SyamlParser(object):
     def __call__(self, fileobj):
-        return yaml.load(fileobj.read())
+        return yaml.load(fileobj.read(),loader=yaml.SafeLoader)
 
 
 @implementer(IPostProcess)
