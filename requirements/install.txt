@@ -3,4 +3,4 @@ jumon==1.1.11
 Mako==1.1.0
 six==1.13.0
 zope.component==4.5
-zope.interface==4.7.0
+zope.interface==4.7.1
