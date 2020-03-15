@@ -52,6 +52,7 @@ setup(
     license='Apache License 2.0',
     description='YAML parser that environment variable is expanded',
     long_description=read('README.rst'),
+    long_description_content_type="text/x-rst",
     url='https://github.com/TakesxiSximada/syaml',
     keywords='YAML',
     classifiers=[
