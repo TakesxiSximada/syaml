@@ -9,10 +9,6 @@ syaml - YAML parser that environment variable is expanded
    :target: https://circleci.com/gh/TakesxiSximada/syaml/tree/master
    :alt: CircleCI Status
 
-.. image:: https://drone.io/github.com/TakesxiSximada/syaml/status.png
-   :target: https://drone.io/github.com/TakesxiSximada/syaml/status.png
-   :alt: drone.io Status
-
 .. image:: https://requires.io/github/TakesxiSximada/syaml/requirements.svg?branch=master
    :target: https://requires.io/github/TakesxiSximada/syaml/requirements/?branch=master
    :alt: Requirements Status
@@ -127,12 +123,43 @@ Execute syaml render command pre process only::
     - example.yml
     - /path/to/syaml/example.yml
 
+
+Unittest
+--------
+
+This section describes the tools and tips used when unittest.
+Run these tests with the following command::
+
+  $ python -m unittest discover src
+
+If all tests pass, you will see the following output::
+
+  ....
+  ----------------------------------------------------------------------
+  Ran 4 tests in 0.018s
+
+  OK
+
+The number of tests performed may be higher than described in this document.
+
+
+Release flow
+------------
+
+1. Bump version. Edit src/syaml/__init__.py file.
+1. Generate distribution files. `python setup.py bdist_wheel sdist`.
+1. Check distribution files. `twine check dist/*`.
+
+   - You need to make sure there are no "errors" displayed on the console.
+
+1. Upload distribution files. `twine upload dist/*`.
+
+
 Other
 -----
 
 - PyPI: https://pypi.python.org/pypi/syaml
 - Github: https://github.com/TakesxiSximada/syaml
 - CircleCI: https://circleci.com/gh/TakesxiSximada/syaml/
-- drone.io: https://drone.io/github.com/TakesxiSximada/syaml
 - coveralls: https://coveralls.io/github/TakesxiSximada/syaml/
 - requires.io: https://requires.io/github/TakesxiSximada/syaml/requirements/
