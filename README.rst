@@ -124,14 +124,10 @@ Execute syaml render command pre process only::
     - /path/to/syaml/example.yml
 
 
-Development
------------
-
-This section describes the tools and tips used when developing this library.
-
 Unittest
-~~~~~~~~
+--------
 
+This section describes the tools and tips used when unittest.
 Run the test with the following command::
 
   $ python -m unittest discover src
