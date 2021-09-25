@@ -84,6 +84,12 @@ setup(
         'zope.component',
         'zope.interface',
     ],
+    extras_require={
+        'test': [
+            'pytest',
+            'tox',
+        ],
+    },
     entry_points="""\
     [console_scripts]
     syaml = syaml.commands:main
