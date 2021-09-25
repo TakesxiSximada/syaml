@@ -4,8 +4,6 @@ import six
 
 from . import syaml
 
-__version__ = '1.3'
-
 
 def load(fp):
     create_reader = syaml.SyamlReaderFactory()
