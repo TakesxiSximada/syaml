@@ -1,18 +1,6 @@
 syaml - YAML parser that environment variable is expanded
 =========================================================
 
-.. image:: https://travis-ci.org/TakesxiSximada/syaml.svg?branch=master
-   :target: https://travis-ci.org/TakesxiSximada/syaml
-   :alt: TravisCI Status
-
-.. image:: https://circleci.com/gh/TakesxiSximada/syaml/tree/master.svg?style=svg
-   :target: https://circleci.com/gh/TakesxiSximada/syaml/tree/master
-   :alt: CircleCI Status
-
-.. image:: https://requires.io/github/TakesxiSximada/syaml/requirements.svg?branch=master
-   :target: https://requires.io/github/TakesxiSximada/syaml/requirements/?branch=master
-   :alt: Requirements Status
-
 Install
 -------
 
@@ -141,6 +129,18 @@ If all tests pass, you will see the following output::
   OK
 
 The number of tests performed may be higher than described in this document.
+
+
+Test with docker
+----------------
+
+Build docker image::
+
+  $ docker buildx build -t syaml .
+
+Run test::
+
+  $ docker run -it --rm --workdir="/app" --volume "$(pwd):/app" --name="syaml" syaml tox
 
 
 Release flow
