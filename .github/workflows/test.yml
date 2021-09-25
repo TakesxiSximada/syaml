@@ -7,10 +7,14 @@ env:
 
 jobs:
   test:
-    runs-on: self-hosted
-    container:
-      image: sximada/python-all
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10]
+        os: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
-      - name: Run tox
+      - name: Install deps
+        run: pip install -e '.[testing]'
+      - name: Run tests
         run: tox
