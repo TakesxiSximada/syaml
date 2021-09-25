@@ -1,2 +1,0 @@
-wheel==0.29.0
-setuptools==25.0.2
