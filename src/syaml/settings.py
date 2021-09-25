@@ -42,7 +42,8 @@ class VolumeSettingParser(object):
     def __call__(self, env=None, path=None, project_name=None):
         env = self.env if env is None else env
         path = self.path if path is None else path
-        project_name = self.project_name if project_name is None else project_name
+        project_name = self.project_name \
+            if project_name is None else project_name
 
         kwds = dict(os.environ)
         kwds['here'] = os.path.abspath(os.path.dirname(path))

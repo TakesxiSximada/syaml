@@ -1,0 +1,25 @@
+name: Test
+
+on: [push]
+
+env:
+  cache-version: v1
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install deps
+        run: pip install '.[testing]'
+
+      - name: Run tests
+        run: pytest
+
+      - name: Run flake8
+        run: flake8
