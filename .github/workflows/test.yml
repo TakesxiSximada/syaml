@@ -1,0 +1,14 @@
+name: Test
+
+on: [push]
+
+env:
+  cache-version: v1
+
+jobs:
+  test:
+    runs-on: sximada/python-all
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tox
+        run: tox
