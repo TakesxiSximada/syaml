@@ -17,4 +17,4 @@ jobs:
       - name: Install deps
         run: pip install '.[testing]'
       - name: Run tests
-        run: tox
+        run: pytest
