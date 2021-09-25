@@ -146,8 +146,8 @@ Run test::
 Release flow
 ------------
 
-1. Bump version. Edit src/syaml/__init__.py file.
-1. Generate distribution files. `python setup.py bdist_wheel sdist`.
+1. Bump version. Edit setup.cfg file.
+1. Generate distribution files. `python -m build`.
 1. Check distribution files. `twine check dist/*`.
 
    - You need to make sure there are no "errors" displayed on the console.
