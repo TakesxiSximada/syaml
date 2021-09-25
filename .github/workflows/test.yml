@@ -7,8 +7,8 @@ env:
 
 jobs:
   test:
+    runs-on: self-hosted
     container:
-      runs-on: self-hosted
       image: sximada/python-all
     steps:
       - uses: actions/checkout@v2
