@@ -26,7 +26,8 @@ class SyamlPreProcess(object):
             filepath = fileobj
             tmpl = Template(filename=filepath)
         else:  # may be file like object
-            filepath = getattr(fileobj, 'name', None)  # fileobj has not name if it not file object
+            # fileobj has not name if it not file object
+            filepath = getattr(fileobj, 'name', None)
             tmpl = Template(fileobj.read())
 
         kwds = dict(os.environ)
@@ -48,7 +49,7 @@ class SyamlPreProcess(object):
 @implementer(IParser)
 class SyamlParser(object):
     def __call__(self, fileobj):
-        return yaml.load(fileobj.read(),yaml.SafeLoader)
+        return yaml.load(fileobj.read(), yaml.SafeLoader)
 
 
 @implementer(IPostProcess)
